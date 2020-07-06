@@ -4,11 +4,9 @@ const router  = express.Router();
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  Recipe.find().then(recipesFromDB => {
-  res.render('index', {recipeList: recipesFromDB});  
-  }).catch(err => {
-    console.log(err); 
-  })
+  const user = req.user;
+  console.log(user);
+  res.render('index');
 });
 
 router.get('/:recipeId', (req, res) => {
