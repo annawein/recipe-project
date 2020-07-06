@@ -4,7 +4,7 @@
 // $ node bin/seeds.js
 
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const User = require("../models/User");
 const Recipe = require('../models/Recipe'); 
 
@@ -50,21 +50,20 @@ User.deleteMany()
 const recipes=[
   {
     title: "Meatless meatballs with tomato sauce", 
-    ingredients: 
-    {
-      "Red bell pepper": 1,
-      "Cauliflower": 550,
-      "Eggplants": 550, 
-      "Red onions": 2,
-      "Gloves garlic": 4,
-      "Spelt": 50,
-      "Canned crushed tomatos": 800, 
-      "Panko breadcrums": 200, 
-      "Basil": 10,
-      "Salt": 1, 
-      "Pepper": 1, 
-      "Olive oil": 1
-    }, 
+    ingredients:[
+      {name: "Red bell pepper", quantity: 1},
+      {name: "Cauliflower", quantity: 550},
+      {name: "Eggplants", quantity: 550},
+      {name: "Red onions", quantity: 2},
+      {name: "Gloves garlic", quantity: 4},
+      {name: "Spelt", quantity: 50},
+      {name: "Canned crushed tomatos", quantity: 800},
+      {name: "Panko breadcrumbs", quantity: 200},
+      {name: "Basil", quantity: 10},
+      {name: "Salt", quantity: 1},
+      {name: "Pepper", quantity: 1},
+      {name: "Olive Oil", quantity: 1},
+    ], 
     duration: 40,
     image: "put image later", 
     description: "put cooking description",
@@ -72,27 +71,34 @@ const recipes=[
   }, 
   {
     title: "Sweet Potato Curry", 
-    ingredients: {
-      "Red onions": 100, 
-      "Gloves garlic": 1, 
-      "Ginger": 1, 
-      "Hokkaido": 200, 
-      "Red bell pepper": 100, 
-      "Cherry tomatos": 80, 
-      "Sweet potatos": 300, 
-      "Olive oil": 1, 
-      "Tomato paste": 1, 
-      "Curry powder": 1, 
-      "Coconut milk": 500, 
-      "Cashews": 80, 
-      "Salt": 1, 
-      "Pepper": 1, 
-    }, 
+    ingredients: [
+      {name: "Red onions", quantity: 100},
+      {name: "Gloves garlic", quantity: 1},
+      {name: "Ginger", quantity: 1},
+      {name: "Hokkaido", quantity: 200},
+      {name: "Cherry tomatos", quantity: 80},
+      {name: "Sweet potatos", quantity: 300},
+      {name: "Olive oil", quantity: 1},
+      {name: "Tomato paste", quantity: 1},
+      {name: "Curry powder", quantity: 1},
+      {name: "Coconut milk", quantity: 500},
+      {name: "Cashews", quantity: 80},
+      {name: "Salt", quantity: 1},
+      {name: "Pepper", quantity: 1},
+    ], 
     duration: 40, 
     image: "put image later", 
     description: "put description later", 
     dishType: "main_course",
   } 
 ]; 
+
+Recipe.create(recipes)
+.then(recipes => {
+  console.log(`Success! Added ${recipes.length} recipes to the database`); 
+  mongoose.connect.close(); 
+}).catch(err => {
+  console.log(err); 
+}); 
 
 
