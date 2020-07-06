@@ -5,8 +5,10 @@ const router  = express.Router();
 /* GET home page */
 router.get('/', (req, res, next) => {
   const user = req.user;
+  Recipe.find().then(recipesFromDB => {
+    res.render('index', {recipeList: recipesFromDB});
+  })
   console.log(user);
-  res.render('index');
 });
 
 router.get('/:recipeId', (req, res) => {
