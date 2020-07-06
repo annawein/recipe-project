@@ -6,6 +6,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
+const Recipe = require('../models/Recipe'); 
 
 const bcryptSalt = 10;
 
@@ -45,3 +46,28 @@ User.deleteMany()
   mongoose.disconnect()
   throw err
 })
+
+const recipes=[
+  {
+    title: "Meatless meatballs with tomato sauce", 
+    ingredients: {
+      "Red bell pepper": 1,
+      "Cauliflower": 550,
+      "Eggplants": 550, 
+      "Red onions": 2,
+      "Gloves garlic": 4,
+      "Spelt": 50,
+      "Canned crushed tomatos": 800, 
+      "Panko breadcrums": 200, 
+      "Basil": 10,
+      "Salt": 1, 
+      "Pepper": 1, 
+      "Olive oil": 1}, 
+    duration: {
+      type: , 
+      min: ; 
+    }
+
+  },  
+
+]
