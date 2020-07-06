@@ -2,4 +2,12 @@
 <p>Welcome to {{title}}</p>
 
 
+<h2>All Recipes</h2>
+{{#each recipeList}} 
+{{this.title}}
+{{this.image}}
+<a href="/{{_id}}">See the details</a>
+{{/each}}
+
+
 
