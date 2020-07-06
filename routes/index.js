@@ -11,7 +11,18 @@ router.get('/', (req, res, next) => {
   console.log(user);
 });
 
-router.get('/:recipeId', (req, res) => {
+router.get('/addRecipe', (req, res) => {
+  res.render('addRecipe')
+}); 
+//needed: post route to create new recipe 
+
+
+//see shopping list for chosen recipe
+router.get('/shopping-list', (req, res) => {
+  res.render('shopping-list')
+}); 
+
+router.get('/:recipeId', (req, res, next) => {
   const recipeId = req.params.recipeId; 
   Recipe.findById(recipeId).then(recipesFromDB => {
     console.log(recipesFromDB); 
@@ -20,5 +31,6 @@ router.get('/:recipeId', (req, res) => {
     console.log(err); 
   })
 })
+
 
 module.exports = router;

@@ -18,6 +18,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
 const User = require("./models/User");
+const Recipe = require('./models/Recipe'); 
     
 
 mongoose
@@ -129,5 +130,7 @@ app.use('/', index);
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
       
+// const recipeRoutes = require('./routes/recipes'); 
+// app.use('/recipe-form', recipeRoutes); 
 
 module.exports = app;
