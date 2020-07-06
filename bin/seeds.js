@@ -50,7 +50,8 @@ User.deleteMany()
 const recipes=[
   {
     title: "Meatless meatballs with tomato sauce", 
-    ingredients: {
+    ingredients: 
+    {
       "Red bell pepper": 1,
       "Cauliflower": 550,
       "Eggplants": 550, 
@@ -62,12 +63,36 @@ const recipes=[
       "Basil": 10,
       "Salt": 1, 
       "Pepper": 1, 
-      "Olive oil": 1}, 
-    duration: {
-      type: , 
-      min: ; 
-    }
+      "Olive oil": 1
+    }, 
+    duration: 40,
+    image: "put image later", 
+    description: "put cooking description",
+    dishType: "main_course", 
+  }, 
+  {
+    title: "Sweet Potato Curry", 
+    ingredients: {
+      "Red onions": 100, 
+      "Gloves garlic": 1, 
+      "Ginger": 1, 
+      "Hokkaido": 200, 
+      "Red bell pepper": 100, 
+      "Cherry tomatos": 80, 
+      "Sweet potatos": 300, 
+      "Olive oil": 1, 
+      "Tomato paste": 1, 
+      "Curry powder": 1, 
+      "Coconut milk": 500, 
+      "Cashews": 80, 
+      "Salt": 1, 
+      "Pepper": 1, 
+    }, 
+    duration: 40, 
+    image: "put image later", 
+    description: "put description later", 
+    dishType: "main_course",
+  } 
+]; 
 
-  },  
 
-]
