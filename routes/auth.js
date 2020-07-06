@@ -5,7 +5,7 @@ const User = require("../models/User");
 const ensureLogin = require("connect-ensure-login");
 
 // Bcrypt to encrypt passwords
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;
 
 
