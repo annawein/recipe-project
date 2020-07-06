@@ -2,6 +2,7 @@ const express = require("express");
 const passport = require('passport');
 const router = express.Router();
 const User = require("../models/User");
+const ensureLogin = require("connect-ensure-login");
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
@@ -30,6 +31,11 @@ router.post("/signup", (req, res, next) => {
     res.render("auth/signup", { message: "Indicate username and password" });
     return;
   }
+
+  router.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
+    res.render("private", { user: req.user });
+  });
+
 
   User.findOne({ username }, "username", (err, user) => {
     if (user !== null) {
