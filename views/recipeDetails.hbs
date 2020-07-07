@@ -5,6 +5,13 @@
 {{#with recipe}}
 <h3>{{title}}</h3>
 <p>Duration: {{duration}}</p>
+  <ul>
+    {{#each ingredients}}
+    <li>
+      {{this.quantity}} {{this.name}}
+    </li>
+    {{/each}}
+  </ul>
 <p>Here's how to do it: {{description}}</p>
 <p><img src="" alt="image"></p>
 {{/with}}
