@@ -1,0 +1,13 @@
+<div class="list">
+  <h2>Your shopping list</h2>
+  {{#with recipe}}
+  {{this.title}}
+  {{!-- <ul>
+    {{#each ingredients}}
+    <li> --}}
+      {{quantity}} {{name}}
+  {{/with}}
+    {{!-- </li>
+    {{/each}} --}}
+  {{!-- </ul> --}}
+</div>

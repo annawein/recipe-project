@@ -1,2 +1,18 @@
+<br>
+<a href="/shopping-list">See your shopping list</a>
+
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+
+<h2>All Recipes</h2>
+{{#each recipeList}} 
+{{this.title}}
+{{this.image}}
+<a href="/{{_id}}">See the details</a>
+{{/each}}
+<br>
+<a href="/addRecipe">Create new recipe</a>
+
+
+
