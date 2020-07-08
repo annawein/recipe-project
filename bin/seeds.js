@@ -139,4 +139,4 @@ async function uploadSeeds() {
   }); 
 }
 
-// uploadSeeds(); 
+uploadSeeds(); 
