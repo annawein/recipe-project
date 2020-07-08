@@ -8,18 +8,19 @@ const ensureLogin = require("connect-ensure-login");
 const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;
 
-
+//login stuff
 router.get("/login", (req, res, next) => {
   res.render("auth/login", { "message": req.flash("error") });
 });
 
 router.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: "/allRecipes/",
   failureRedirect: "/auth/login",
   failureFlash: true,
   passReqToCallback: true
 }));
 
+//signup stuff
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
@@ -63,7 +64,11 @@ router.post("/signup", (req, res, next) => {
 
 router.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("/");
+  console.log('user is logged out')
+  res.render("auth/logout");
 });
+
+
+
 
 module.exports = router;

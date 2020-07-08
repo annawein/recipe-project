@@ -2,13 +2,22 @@
 
 <form action="/addRecipe" method="post">
 
+<label for="user">Your username:</label>
+<input type="text" name="user" id="user">
+<br>
 <label for="title">Name of the dish:</label>
 <input type="text" name="title" id="title">
-
+<br>
 <label for="description">Add a description:</label>
 <input type="text" name="description" id="description">
+<br>
+<h5>Which ingredients are needed?</h5>
+<label for="quantity">Quantity</label>
+<input type="number" name="quantity" placeholder="1" id="quantity">
+<br>
+<label for="name">Ingredient</label>
+<input type="text" name="name" placeholder="carrot" id="name">
 
-{{!-- // how to write the ingredients? --}}
 
 <button type="submit">Add this recipe</button>
 

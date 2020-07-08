@@ -130,7 +130,7 @@ app.use('/', index);
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
       
-// const recipeRoutes = require('./routes/recipes'); 
-// app.use('/recipe-form', recipeRoutes); 
+const recipeRoutes = require('./routes/recipes'); 
+app.use('/', recipeRoutes); 
 
 module.exports = app;
