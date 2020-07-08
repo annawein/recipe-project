@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const User = require("../models/User");
 const Recipe = require('../models/Recipe'); 
+console.log("living the dream")
 
 const bcryptSalt = 10;
 
@@ -23,6 +24,7 @@ const users = [
   {
     username: "alice",
     password: bcrypt.hashSync("alice", bcrypt.genSaltSync(bcryptSalt)),
+
   },
   {
     username: "bob",
@@ -104,14 +106,25 @@ const recipes=[
 // }); 
 
 async function uploadSeeds() {
+  console.log("this was happening")
   const promises = []; 
   const deleteUsers = await User.deleteMany(); 
+  console.log("this was happening1")
+
   const deleteRecipes = await Recipe.deleteMany(); 
+  console.log("this was happening2")
+
   for (let user of users) {
     const userCreated = await User.create(user); 
+    console.log("this was happening3")
+
 
     for (let recipe of recipes) {
+      console.log("this was happening8")
+
       if (user.username === recipe.user) {
+        console.log("this was happening4")
+
         recipe.user_id = userCreated._id; 
         const recipeCreated = await Recipe.create(recipe); 
         promises.push(recipeCreated); 
@@ -120,9 +133,11 @@ async function uploadSeeds() {
   }
   Promise.all(promises).then((response) => {
     User.find().then((response) => {
+      console.log("this was happening5")
+
       mongoose.disconnect(); 
     }); 
   }); 
 }
 
-uploadSeeds(); 
+// uploadSeeds(); 

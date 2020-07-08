@@ -10,6 +10,7 @@ const bcryptSalt = 10;
 
 //login stuff
 router.get("/login", (req, res, next) => {
+  
   res.render("auth/login", { "message": req.flash("error") });
 });
 
@@ -54,7 +55,11 @@ router.post("/signup", (req, res, next) => {
 
     newUser.save()
     .then(() => {
-      res.redirect("/");
+      console.log("working")
+      req.login(newUser, function(err) {
+        if (err) { return next(err); }
+        return res.redirect('/');
+      });
     })
     .catch(err => {
       res.render("auth/signup", { message: "Something went wrong" });
