@@ -7,9 +7,17 @@ const ensureLogin = require("connect-ensure-login");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("auth/login");
-});
+  console.log(req.user)
+  if(req.user){
+    res.redirect("/allRecipes")
+    
 
+  }
+  else{
+    res.render("auth/login");
+
+  }
+});
 
 // router.get('/', (req, res, next) => {
 //   console.log("this is the user?", req.user)
@@ -35,10 +43,10 @@ router.get("/allRecipes", ensureLogin.ensureLoggedIn(), (req, res) => {
 }); 
 
 
-
 router.get('/addRecipe', ensureLogin.ensureLoggedIn(), (req, res) => {
+  const user=req.user; 
   User.find().then(usersFromDB => {
-    res.render('addRecipe', {users: usersFromDB})
+    res.render('addRecipe', {users: usersFromDB, user: user})
   }).catch(err => {
     console.log(err); 
   })
