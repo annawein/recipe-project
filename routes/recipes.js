@@ -7,32 +7,31 @@ const mongoose = require('mongoose');
 const ensureLogin = require("connect-ensure-login");
 
 //when I want to render the page from the nav bar
-// router.get("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
-//   console.log(req.user); 
-//   const user = req.user;
-//   Recipe.find()
-//   .then(recipesFromDB => {
-//     console.log("do I even get here?", recipesFromDB)
-//     res.render('shopping-list', {list: recipesFromDB, user: user});
-//   })
-//   .catch((err)=> {
-//     console.log(err); 
-//     next(); 
-//   }); 
-// }); 
+router.get("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
+  const ing = req.user.shoppingList;
+  const user=req.user; 
+  console.log(ing); 
+   res.render('shopping-list' , {ing, user: user})
+  // .catch((err)=> {
+  //   console.log(err); 
+  //   next(); 
+  // }); 
+}); 
 
 //when I click the button (add to list)
 router.post("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
   // console.log(req.body.ingredient)
   // console.log(Object.values(ing)); 
-  const user=req.user; 
+  
+  const user=req.user._id; 
   let ing= req.body.ingredient; 
   console.log(user); 
+  console.log(ing)
   User.findByIdAndUpdate(
     user, 
- {  shoppingList: ing}
+ { $push:{shoppingList: ing}}
 ).then(list => {
-    console.log(`This is the ${list}.`); 
+   
     res.render('shopping-list',{ing, user: user})
   }).catch(err => {
     console.log(err)

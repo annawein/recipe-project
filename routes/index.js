@@ -10,12 +10,9 @@ router.get("/", (req, res, next) => {
   console.log(req.user)
   if(req.user){
     res.redirect("/allRecipes")
-    
-
   }
   else{
     res.render("auth/login");
-
   }
 });
 
@@ -41,7 +38,6 @@ router.get("/allRecipes", ensureLogin.ensureLoggedIn(), (req, res) => {
     next(); 
   }); 
 }); 
-
 
 router.get('/addRecipe', ensureLogin.ensureLoggedIn(), (req, res) => {
   const user=req.user; 
