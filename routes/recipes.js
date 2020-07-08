@@ -38,6 +38,18 @@ router.post("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
   })
 }); 
 
+router.get('/ingredients/remove/:ingredient', (req, res) => {
+  const ingr=req.params.ingredient; 
+  const user=req.user._id; 
+  console.log(ingr); 
+
+  //to be worked on: 
+  User.findByIdAndUpdate(
+    user, 
+    { $pull: {ingr}}
+  ); 
+  res.redirect('/shoppingList')
+}); 
 
 // old
 // router.post('/addShoppingList/:id', (req, res, next) => {
