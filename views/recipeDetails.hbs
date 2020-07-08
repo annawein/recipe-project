@@ -1,17 +1,21 @@
 <h2>Recipe Details</h2>
 
-<a href="/">Go back to overview</a>
+<a href="/allRecipes">Go back to overview</a>
 
 
-<form action="/addShoppingList/{{recipe._id}}" method="POST">
+
+<form action="/shoppingList" method="POST">
 
 {{#with recipe}}
 <h3 >{{title}}</h3>
 <p>Duration: {{duration}}</p>
   <ul>
+  
+    
     {{#each ingredients}}
     <li>
-      {{this.quantity}} {{this.name}}
+        <input type="text" name="ingredient" value="{{this.quantity}} {{this.name}}">
+      
     </li>
     {{/each}}
   </ul>

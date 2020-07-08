@@ -1,0 +1,12 @@
+<h2>Hello {{user.username}}, check out all your recipes:</h2>
+{{#each recipeList}}
+<h3>{{this.title}} </h3>
+{{this.image}} 
+<a href="/allRecipes/{{_id}}">See the details</a>
+<br>
+<br>
+<br>
+{{/each}}
+<br>
+<br>
+<a href="/addRecipe">Create new recipe</a>

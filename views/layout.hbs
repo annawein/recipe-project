@@ -8,13 +8,18 @@
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
-
+  {{#if user}}
   <nav>
-    <a href="/">Home</a>
-    <a href="/auth/login">Login</a>
-    <a href="/auth/signup">Signup</a>
+    <a href="/allRecipes">Recipes</a>
+    <a href="/shoppingList">Shopping List</a>
     <a href="/auth/logout">Logout</a>
   </nav>
+  {{else}}
+  <nav>
+    <a href="/auth/login">Login</a>
+    <a href="/auth/signup">Signup</a>
+  </nav>
+  {{/if}}
 
   {{{body}}}
 
