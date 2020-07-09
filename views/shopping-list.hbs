@@ -12,18 +12,10 @@
   </p>
   </div>
   {{/each}}
+  <p>Add addtional items to your list:</p>
+  <input type="number" name="quantity" placeholder="0">
+  <input type="text" name="name" placeholder="item"> <br> <br>
   <button type="submit">Update</button>
   </form>
 </div>
 
-  {{!-- {{#each ing}}
-  <div>
-    <p>
-      <input type="number" value="{{this.quantity}}" name="quantity">
-      <input type="text" value="{{this.name}}" name="name">
-      <input type="text" value="{{this}}" name="name">
-      
-      <a href="/ingredients/remove/{{this}}">X</a>
-      </p>
-  </div> 
-  {{/each}} --}}

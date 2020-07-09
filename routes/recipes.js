@@ -8,15 +8,10 @@ const ensureLogin = require("connect-ensure-login");
 
 //when I want to render the page from the nav bar
 router.get("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
-  // const list = req.user.shoppingList[0].quantity;
   const list = req.user.shoppingList; 
   const user=req.user; 
   // console.log(list)
    res.render('shopping-list' , {list, user: user})
-  // .catch((err)=> {
-  //   console.log(err); 
-  //   next(); 
-  // }); 
 }); 
 
 //when I click the button (add to list)
