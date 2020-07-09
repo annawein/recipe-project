@@ -14,8 +14,10 @@
     
     {{#each ingredients}}
     <li>
-        <input type="text" name="ingredient" value="{{this.quantity}} {{this.name}}">
-      
+        <input type="text" name="ingredient" value="{{this.quantity}} {{this.name}}"> 
+      {{!-- <input type="number" name="quan" value={{this.quantity}}>
+      <input type="text" name="nameOfIng" value={{this.name}}> --}}
+
     </li>
     {{/each}}
   </ul>

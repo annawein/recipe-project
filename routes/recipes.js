@@ -8,10 +8,14 @@ const ensureLogin = require("connect-ensure-login");
 
 //when I want to render the page from the nav bar
 router.get("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
-  const ing = req.user.shoppingList;
+  // const list = req.user.shoppingList[0].quantity;
+  const list = req.user.shoppingList; 
   const user=req.user; 
+
+  console.log(list)
+
   // console.log(ing); 
-   res.render('shopping-list' , {ing, user: user})
+   res.render('shopping-list' , {list, user: user})
   // .catch((err)=> {
   //   console.log(err); 
   //   next(); 
@@ -20,19 +24,24 @@ router.get("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
 
 //when I click the button (add to list)
 router.post("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
-  // console.log(req.body.ingredient)
   // console.log(Object.values(ing)); 
-  
   const user=req.user._id; 
   let ing= req.body.ingredient; 
-  console.log(user); 
-  // console.log(ing)
+
+  // console.log(user); 
+  // console.log("SHOW ME THE"+ing)
+
+  const list = ing.map(elem => {
+    let part=elem.split(" ")
+    return {quantity:part[0], name:part.slice(1).join(" ")}
+  })
+
   User.findByIdAndUpdate(
     user, 
- { $push:{shoppingList: ing}}
-).then(list => {
-   
-    res.render('shopping-list',{ing, user: user})
+ { $push:{shoppingList: list}}
+).then(list => {   
+    res.redirect('/shoppingList')
+    // res.render('shopping-list',{ list, user: user})
   }).catch(err => {
     console.log(err)
   })
@@ -41,7 +50,11 @@ router.post("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
 router.get('/ingredients/remove/:ingredient', (req, res) => {
   const ingr=req.params.ingredient; 
   const user=req.user._id; 
+
+
   console.log(`${ingr} removed for user ${user}.`); 
+
+
   User.findByIdAndUpdate(
     user, 
     { $pull: {shoppingList: ingr}}
@@ -51,6 +64,13 @@ router.get('/ingredients/remove/:ingredient', (req, res) => {
     console.log(err)
   })
 }); 
+
+
+
+router.post('/shoppingList/update', (req, res) => {
+  console.log(req.body); 
+}); 
+
 
 // old
 // router.post('/addShoppingList/:id', (req, res, next) => {
