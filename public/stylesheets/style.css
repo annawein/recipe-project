@@ -16,6 +16,26 @@ hr {
     padding: 0;
 }
 
-.container
+.login-signup {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.what-we-do {
+  display: flex; 
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+
+
 
 /*# sourceMappingURL=style.css.map */
