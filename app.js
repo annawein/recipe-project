@@ -1,5 +1,8 @@
 require('dotenv').config();
 
+
+
+
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express      = require('express');
@@ -63,7 +66,7 @@ passport.use(new LocalStrategy((username, password, next) => {
 }));
 
 
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Middleware Setup
 app.use(logger('dev'));
@@ -132,5 +135,7 @@ app.use('/auth', authRoutes);
       
 const recipeRoutes = require('./routes/recipes'); 
 app.use('/', recipeRoutes); 
+
+
 
 module.exports = app;
