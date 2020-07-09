@@ -10,7 +10,7 @@ const ensureLogin = require("connect-ensure-login");
 router.get("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
   const ing = req.user.shoppingList;
   const user=req.user; 
-  console.log(ing); 
+  // console.log(ing); 
    res.render('shopping-list' , {ing, user: user})
   // .catch((err)=> {
   //   console.log(err); 
@@ -26,7 +26,7 @@ router.post("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
   const user=req.user._id; 
   let ing= req.body.ingredient; 
   console.log(user); 
-  console.log(ing)
+  // console.log(ing)
   User.findByIdAndUpdate(
     user, 
  { $push:{shoppingList: ing}}
@@ -41,14 +41,15 @@ router.post("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
 router.get('/ingredients/remove/:ingredient', (req, res) => {
   const ingr=req.params.ingredient; 
   const user=req.user._id; 
-  console.log(ingr); 
-
-  //to be worked on: 
+  console.log(`${ingr} removed for user ${user}.`); 
   User.findByIdAndUpdate(
     user, 
-    { $pull: {ingr}}
-  ); 
-  res.redirect('/shoppingList')
+    { $pull: {shoppingList: ingr}}
+  ).then(list => {
+    res.redirect('/shoppingList')
+  }).catch(err => {
+    console.log(err)
+  })
 }); 
 
 // old
