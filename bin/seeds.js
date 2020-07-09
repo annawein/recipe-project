@@ -167,7 +167,7 @@ const recipes=[
     ingredients: [
       {name: "Peanut butter, natural creamy and unsalted", quantity: 1},
       {name: "Oats", quantity: 1.25},
-      {name: "Pure maple syrup ", quantity: 0.5},
+      {name: "Pure maple syrup", quantity: 0.5},
       {name: "Vegan chocolate chips", quantity: 0.5},
     ], 
     duration: 45, 

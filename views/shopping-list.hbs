@@ -4,14 +4,17 @@
   <form action="/shoppingList/update" method="POST">
   
   {{#each list}}
-  {{!-- {{#each shoppingList}} --}}
+  <div>
   <p>
-  <input type="number" value="{{this.quantity}}" name="quantity">{{name}}
-  <input type="hidden" value="{{name}}" name="name">
+  <input type="number" value="{{this.quantity}}" name="quantity">{{this.name}}
+  <input name="name" value="{{this.name}}" type="hidden" >
+  <a href="/ingredients/remove/{{this.name}}">X</a>
   </p>
-  {{!-- {{/each}} --}}
+  </div>
   {{/each}}
-
+  <button type="submit">Update</button>
+  </form>
+</div>
 
   {{!-- {{#each ing}}
   <div>
@@ -24,6 +27,3 @@
       </p>
   </div> 
   {{/each}} --}}
-  <button type="submit">Update</button>
-  </form>
-</div>

@@ -11,10 +11,7 @@ router.get("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
   // const list = req.user.shoppingList[0].quantity;
   const list = req.user.shoppingList; 
   const user=req.user; 
-
-  console.log(list)
-
-  // console.log(ing); 
+  // console.log(list)
    res.render('shopping-list' , {list, user: user})
   // .catch((err)=> {
   //   console.log(err); 
@@ -51,14 +48,12 @@ router.get('/ingredients/remove/:ingredient', (req, res) => {
   const ingr=req.params.ingredient; 
   const user=req.user._id; 
 
-
   console.log(`${ingr} removed for user ${user}.`); 
-
 
   User.findByIdAndUpdate(
     user, 
-    { $pull: {shoppingList: ingr}}
-  ).then(list => {
+    { $pull: {"shoppingList": {name:ingr}}}
+  ).then(() => {
     res.redirect('/shoppingList')
   }).catch(err => {
     console.log(err)
@@ -68,23 +63,19 @@ router.get('/ingredients/remove/:ingredient', (req, res) => {
 
 
 router.post('/shoppingList/update', (req, res) => {
-  console.log(req.body); 
+  console.log(req.body.name);
+  console.log(req.body.quantity)
+  const user=req.user._id; 
+  const list = req.body.name.map((nameOfIng, index) => {
+    return {name:nameOfIng, quantity: req.body.quantity[index]}
+  }); 
+  console.log(list)
+  User.findByIdAndUpdate(
+    user, 
+    {"shoppingList": list}
+    ).then(()=> {res.redirect('/shoppingList')
+  })
 }); 
-
-
-// old
-// router.post('/addShoppingList/:id', (req, res, next) => {
-//   console.log("working", req.params.id,req.user); 
-//   User.findByIdAndUpdate(req.user._id,{$push:{shoppingList:req.params.id}},{new:true}).then(responseDB=>{
-//   console.log(responseDB)
-//   res.redirect(`/add/shoppingList/${req.user._id}`)
-// }).catch(error=>console.log(error))
-// }); 
-//this gets called with the button
-// router.get('/add/shoppingList/:id', (req, res, next) => {
-//   console.log("working?",req.params.id)
-//   res.render('shopping-list')
-// })
 
 
 module.exports = router;
