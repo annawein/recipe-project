@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+
+
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express      = require('express');
@@ -132,5 +134,7 @@ app.use('/auth', authRoutes);
       
 const recipeRoutes = require('./routes/recipes'); 
 app.use('/', recipeRoutes); 
+
+
 
 module.exports = app;
