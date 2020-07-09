@@ -2,22 +2,16 @@
 
 <a href="/allRecipes">Go back to overview</a>
 
-
-
 <form action="/shoppingList" method="POST">
 
 {{#with recipe}}
 <h3 >{{title}}</h3>
-<p>Duration: {{duration}}</p>
+<p>Duration: {{duration}} minutes in total</p>
   <ul>
-  
-    
+
     {{#each ingredients}}
     <li>
-        <input type="text" name="ingredient" value="{{this.quantity}} {{this.name}}"> 
-      {{!-- <input type="number" name="quan" value={{this.quantity}}>
-      <input type="text" name="nameOfIng" value={{this.name}}> --}}
-
+        <input type="text" name="ingredient" value="{{this.quantity}} {{this.measure}} {{this.name}}"> 
     </li>
     {{/each}}
   </ul>
@@ -26,26 +20,7 @@
 {{/with}}
 
 
-<button type="submit">Add to shopping list</button>
+<button type="submit">Add the ingredients to shopping list</button>
 
 </form>
 
-{{!-- <a href="/shopping-list">Add all ingredients to shopping list</a> --}}
-
-
-<script>
-//let id=document.querySelector('.something').id; 
-//let shoppingCart=document.querySelector('.shoppingId'); 
-
-//const recipe = JSON.parse('{{{id}}}');
-
-//shoppingCart.onclick=function() {
-  //console.log('clicked, {{id}}'); 
-  //fetch(`/update-list/${id}`)
-  //.then((res) => res.json())
-  //.then((response) => {
-  //  console.log('response')
-  //})
-//}; 
-// --}}
-</script>

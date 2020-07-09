@@ -11,7 +11,8 @@ const recipeSchema = new Schema({
   ingredients: [
     {
     name: String, 
-    quantity: Number,  
+    quantity: Number, 
+    measure: String, 
   },
 ], 
   duration: {

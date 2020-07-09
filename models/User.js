@@ -8,7 +8,7 @@ const userSchema = new Schema({
     { 
       quantity: Number, 
       name: String, 
-
+      measure: String, 
       }
     
   ], 
