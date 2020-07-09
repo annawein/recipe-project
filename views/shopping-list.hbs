@@ -1,6 +1,29 @@
 <div class="list">
   <h2>Your shopping list</h2>
-  {{#each ing}}
-    <p>{{this}} <a href="/ingredients/remove/{{this}}">X</a></p>
+
+  <form action="/shoppingList/update" method="POST">
+  
+  {{#each list}}
+  <div>
+  <p>
+  <input type="number" value="{{this.quantity}}" name="quantity">{{this.name}}
+  <input name="name" value="{{this.name}}" type="hidden" >
+  <a href="/ingredients/remove/{{this.name}}">X</a>
+  </p>
+  </div>
   {{/each}}
+  <button type="submit">Update</button>
+  </form>
 </div>
+
+  {{!-- {{#each ing}}
+  <div>
+    <p>
+      <input type="number" value="{{this.quantity}}" name="quantity">
+      <input type="text" value="{{this.name}}" name="name">
+      <input type="text" value="{{this}}" name="name">
+      
+      <a href="/ingredients/remove/{{this}}">X</a>
+      </p>
+  </div> 
+  {{/each}} --}}
