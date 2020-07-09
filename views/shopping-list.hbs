@@ -1,7 +1,6 @@
 <div class="list">
   <h2>Your shopping list</h2>
   {{#each ing}}
-    <p>{{this}}</p>
-    <a href="/ingredients/remove/{{this}}">X</a>
+    <p>{{this}} <a href="/ingredients/remove/{{this}}">X</a></p>
   {{/each}}
 </div>
