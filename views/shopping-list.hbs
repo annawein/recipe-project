@@ -6,7 +6,8 @@
   {{#each list}}
   <div>
   <p>
-  <input type="number" value="{{this.quantity}}" name="quantity">{{this.name}}
+  <input type="number" value="{{this.quantity}}" name="quantity">{{this.measure}}{{this.name}}
+  <input name="measure" value="{{this.measure}}" type="hidden" >
   <input name="name" value="{{this.name}}" type="hidden" >
   <a href="/ingredients/remove/{{this.name}}">X</a>
   </p>
@@ -14,6 +15,7 @@
   {{/each}}
   <p>Add addtional items to your list:</p>
   <input type="number" name="quantity" placeholder="0">
+  <input type="text" name="measure" placeholder="g/pieces/etc.">
   <input type="text" name="name" placeholder="item"> <br> <br>
   <button type="submit">Update</button>
   </form>

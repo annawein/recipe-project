@@ -2,22 +2,16 @@
 
 <a href="/allRecipes">Go back to overview</a>
 
-
-
 <form action="/shoppingList" method="POST">
 
 {{#with recipe}}
 <h3 >{{title}}</h3>
-<p>Duration: {{duration}}</p>
+<p>Duration: {{duration}} minutes in total</p>
   <ul>
-  
-    
+
     {{#each ingredients}}
     <li>
-        <input type="text" name="ingredient" value="{{this.quantity}} {{this.name}}"> 
-      {{!-- <input type="number" name="quan" value={{this.quantity}}>
-      <input type="text" name="nameOfIng" value={{this.name}}> --}}
-
+        <input type="text" name="ingredient" value="{{this.quantity}} {{this.measure}} {{this.name}}"> 
     </li>
     {{/each}}
   </ul>
