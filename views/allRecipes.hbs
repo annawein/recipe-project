@@ -1,17 +1,48 @@
-<h2>Hello {{user.username}}, check out all your recipes:</h2>
+<h2>Recipes</h2>
 
+{{!-- <div class="container">
+  <div class="row">
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    <div class="col-sm">
+  </div>
+</div> --}}
+
+
+<div class="container">
+  {{!-- <div class="row">
+    <div class="col-sm"> --}}
 {{#each recipeList}}
 
+  
+<div class="recipe-card">
 
-  <img src="{{this.image}} ">
-  <h3>{{this.title}} </h3>
+  <img class="rounded" "img-fluid" src="{{this.image}}">
+  <figcaption class="caption">{{this.title}}</figcaption>
+  <br>
+  <h3 class="recipe-title">{{this.title}} </h3>
   <a href="/allRecipes/{{_id}}">See the details</a>
+
+</div>
+ 
    
 
-  <br>
-  <br>
-  <br>
+  
+
 {{/each}}
+{{!-- </div>
+
+</div> --}}
+</div>
 
 <br>
 <br>
