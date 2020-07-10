@@ -2,23 +2,38 @@
 
 <form action="/addRecipe" method="post">
 
-<label for="user">Your username:</label>
-<input type="text" name="user" id="user">
-<br>
 <label for="title">Name of the dish:</label>
 <input type="text" name="title" id="title">
 <br>
-<label for="description">Add a description:</label>
+
+<label for="duration">Total preparation time (in minutes):</label>
+<input type="number" name="duration" id="duration" placeholder="0">
+<br>
+ <p>Dish Type: 
+  <select id="dishType" name="dishType"> 
+    <option value="Breakfast">Breakfast</option>
+    <option value="Main">Main Course</option>
+    <option value="Soup">Soup</option>
+    <option value="Snack">Snack</option>
+    <option value="Drink">Drink</option>
+    <option value="Dessert">Dessert</option>
+    <option value="Other">Other</option>
+  </select>
+  </p>
+
+<label for="description">Add directions/a description:</label>
 <input type="text" name="description" id="description">
 <br>
-<h5>Which ingredients are needed?</h5>
+
+<p>Which ingredients are needed?</p>
 <label for="quantity">Quantity</label>
 <input type="number" name="quantity" placeholder="1" id="quantity">
-<br>
+
+
 <label for="name">Ingredient</label>
 <input type="text" name="name" placeholder="carrot" id="name">
 
-
+<br>
 <button type="submit">Add this recipe</button>
 
 </form>
