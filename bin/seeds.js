@@ -48,6 +48,49 @@ const users = [
 
 const recipes=[
   {
+    user: "bob", 
+    title: "Vietnamese summer rolls", 
+    ingredients: [
+      {name: "Carrot", quantity: 1, measure:"pieces"},
+      {name: "Thai basil", quantity: 10, measure:"g"},
+      {name: "Cilantro", quantity: 10, measure:"g"},
+      {name: "Mint", quantity: 10, measure:"g"},
+      {name: "Tofu", quantity: 200, measure:"g"},
+      {name: "Bell pepper", quantity: 1, measure:"pieces"},
+      {name: "Green onions", quantity: 3, measure:"pieces"},
+      {name: "Lettuce", quantity: 0.5, measure:"g"},
+      {name: "Peanuts", quantity: 60, measure:"g"},
+      {name: "Rice wrappers", quantity: 10, measure:"pieces"},
+      {name: "Sesame seeds", quantity: 60, measure:"g"},
+      {name: "Peanut/satay sauce", quantity: 200, measure:"ml"},
+      {name: "Vegetable Oil", quantity: 1, measure: "tbsp"},
+      {name: "Salt", quantity: 1, measure: "tbsp"},
+      {name: "Pepper", quantity:1, measure: "tbsp"},
+    ], 
+    duration: 40, 
+    image: "/images/recipe4.jpg", 
+    description: "Using a spiral slicer, cut carrot into thin strips. Roughly chop Thai basil, cilantro, and mint. Cut tofu into thin rectangles. Cut pepper, onions, and lettuce into strips. Using a grease-free pan, toast nuts over medium-low heat for approx. 3 – 5 min. until fragrant. In a frying pan, sauté tofu in some vegetable oil over medium-high heat for approx. 2 – 3 min. per side or until golden brown. Season with salt and pepper. Dip rice wrappers evenly into water and allow to soak for approx. 1 min. Gently shake to remove excess water. Set aside on a plate or cutting board. In the middle of the rice wrapper, layer tofu, carrot, pepper, peanuts, sesame seeds, green onions, and chopped herbs. Finish off with a dollop of peanut sauce. In the same way you wrap a tortilla, fold the edges of the rice wrapper towards the center, bring forward the bottom, and roll forward with your thumbs until the roll is tight. Garnish the roll with sesame seeds and serve with a dipping sauce of your choice. Enjoy!", 
+    dishType: "Snack",
+  }, 
+  {
+    user: "bob", 
+    title: "Wholesome vegan pancakes", 
+    ingredients: [
+      {name: "Almond drink", quantity: 200, measure:"ml"},
+      {name: "Coconut flour", quantity: 2, measure: "tbsp"},
+      {name: "Wholemeal flour", quantity: 7, measure: "tbsp"},
+      {name: "Agave nectar", quantity: 1, measure: "tbsp"},
+      {name: "Puffed amaranth", quantity: 3, measure: "tsp"},
+      {name: "Baking powder", quantity: 3, measure: "tsp"},
+      {name: "Cinnamon", quantity: 0.5, measure: "tsp"},
+      {name: "Coconut oil", quantity: 1, measure: "tsp"},
+    ], 
+    duration: 40, 
+    image: "/images/recipe6.jpg", 
+    description: "Combine coconut flour, wholemeal flour, puffed amaranth, baking powder, and cinnamon in a large mixing bowl. Add almond drink and agave nectar and stir until combined. It’s okay if there are some lumps in the batter, as this makes the pancakes even fluffier. Add a knob of coconut oil to pan and melt over a medium heat. When pan is hot, add 2 – 3 tbsp. of batter for each pancake. Fry for approx. 30 sec. until large bubbles appear on top, then flip. Remove from heat when golden brown on both sides. Enjoy!", 
+    dishType: "Breakfast",
+  }, 
+  {
     user: "alice", 
     title: "Meatless meatballs with tomato sauce", 
     ingredients:[
@@ -190,11 +233,13 @@ const recipes=[
     ], 
     duration: 40, 
     image: "/images/recipe6.jpg", 
+
     description: "Combine coconut flour, wholemeal flour, puffed amaranth, baking powder, and cinnamon in a large mixing bowl. Add almond drink and agave nectar and stir until combined. It’s okay if there are some lumps in the batter, as this makes the pancakes even fluffier. Add a knob of coconut oil to pan and melt over a medium heat. When pan is hot, add 2 – 3 tbsp. of batter for each pancake. Fry for approx. 30 sec. until large bubbles appear on top, then flip. Remove from heat when golden brown on both sides. Enjoy!", 
     dishType: "Breakfast",
   }, 
   {
     user: "alice", 
+
     title: "Colorful quinoa bowl", 
     ingredients: [
       {name: "Plant-based cream cheese alternative", quantity: 3, measure:""},
@@ -217,7 +262,22 @@ const recipes=[
     description: "Preheat oven to 200°C/400°F. Peel sweet potato and cut into sticks. Chop rosemary. Transfer potatoes to a parchment-lined baking tray. Season with salt, top with rosemary, and drizzle with olive oil. Bake for approx. 30 min. Meanwhile, finely chop chives and slice half of the lemon. Cut broccoli into bitesize pieces. Remove the avocado stone and shell. Cut into strips. Halve cherry tomatoes. Chop cucumber and carrots into sticks. Rinse quinoa in a sieve under cold running water and drain. Add water and salt to taste to small saucepan and bring to a boil over medium heat. Add quinoa and cook for approx. 15 min. Fill another small pan with water and salt to taste and bring to a boil. Add broccoli and cook for approx. 5 - 10 min. until tender but still firm to the bite. Drain water and set aside. For the topping, combine cream cheese, chives, salt, and pepper in small bowl. Add quinoa to a serving bowl and top with prepared vegetables. Drizzle with quark mixture and lemon juice. Enjoy!", 
     dishType: "Main",
   }, 
+
 ]; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Recipe.create(recipes)
 // .then(recipes => {
