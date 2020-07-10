@@ -1,29 +1,43 @@
 <div class="list">
-  <h2>Your shopping list</h2>
+<h2>Your shopping list</h2>
 
-  <form action="/shoppingList/update" method="POST">
+<form action="/shoppingList/update" method="POST">
   
   {{#each list}}
   <div>
   <p>
-  <input type="number" value="{{this.quantity}}" name="quantity">{{this.name}}
+  <input type="number" value="{{this.quantity}}" name="quantity">{{this.measure}} {{this.name}}
+  <input name="measure" value="{{this.measure}}" type="hidden" >
   <input name="name" value="{{this.name}}" type="hidden" >
   <a href="/ingredients/remove/{{this.name}}">X</a>
   </p>
   </div>
   {{/each}}
   <button type="submit">Update</button>
+</form>
+</div>
+
+<br>
+
+<div>
+  <p>Add addtional items to your list:</p>
+  <form action="/shoppingList/updateWithAdditionalItem" method="POST">
+  <input type="number" name="quantity" placeholder="0" required>
+
+  {{!-- dropdown menue --}}
+  {{!-- <input type="text" name="measure" placeholder="g/pieces/etc."> --}}
+  <select id="measure" name="measure">
+    <option value="g">g</option>
+    <option value="ml">ml</option>
+    <option value="pieces">piece/s</option>
+    <option value="cup">cup</option>
+    <option value="tbsp">tbsp</option>
+    <option value="tsp">tsp</option>
+    <option value="other">other</option>
+  </select>
+
+  <input type="text" name="name" placeholder="item"> <br> <br>
+  <button type="submit">Add additional item</button>
   </form>
 </div>
 
-  {{!-- {{#each ing}}
-  <div>
-    <p>
-      <input type="number" value="{{this.quantity}}" name="quantity">
-      <input type="text" value="{{this.name}}" name="name">
-      <input type="text" value="{{this}}" name="name">
-      
-      <a href="/ingredients/remove/{{this}}">X</a>
-      </p>
-  </div> 
-  {{/each}} --}}

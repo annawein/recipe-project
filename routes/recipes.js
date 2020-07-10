@@ -8,15 +8,10 @@ const ensureLogin = require("connect-ensure-login");
 
 //when I want to render the page from the nav bar
 router.get("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
-  // const list = req.user.shoppingList[0].quantity;
   const list = req.user.shoppingList; 
   const user=req.user; 
   // console.log(list)
    res.render('shopping-list' , {list, user: user})
-  // .catch((err)=> {
-  //   console.log(err); 
-  //   next(); 
-  // }); 
 }); 
 
 //when I click the button (add to list)
@@ -30,7 +25,7 @@ router.post("/shoppingList", ensureLogin.ensureLoggedIn(), (req, res) => {
 
   const list = ing.map(elem => {
     let part=elem.split(" ")
-    return {quantity:part[0], name:part.slice(1).join(" ")}
+    return {quantity:part[0], measure:part[1], name:part.slice(2).join(" ")}
   })
 
   User.findByIdAndUpdate(
@@ -64,11 +59,13 @@ router.get('/ingredients/remove/:ingredient', (req, res) => {
 
 router.post('/shoppingList/update', (req, res) => {
   console.log(req.body.name);
-  console.log(req.body.quantity)
+  console.log(req.body.quantity); 
+  console.log(req.body.measure)
   const user=req.user._id; 
   const list = req.body.name.map((nameOfIng, index) => {
-    return {name:nameOfIng, quantity: req.body.quantity[index]}
+    return {name:nameOfIng, measure: req.body.measure[index], quantity: req.body.quantity[index]}
   }); 
+  // const list ={name:req.body.name, measure: req.body.measure[index], quantity: req.body.quantity[index]}
   console.log(list)
   User.findByIdAndUpdate(
     user, 
@@ -76,6 +73,31 @@ router.post('/shoppingList/update', (req, res) => {
     ).then(()=> {res.redirect('/shoppingList')
   })
 }); 
+
+
+router.post('/shoppingList/updateWithAdditionalItem', (req, res) => {
+  console.log(req.body.name);
+  console.log(req.body.quantity); 
+  console.log(req.body.measure)
+  const user=req.user._id; 
+  console.log(user)
+  const {quantity, measure, name} = req.body; 
+  console.log(req.body)
+  const list ={name:req.body.name, measure: req.body.measure, quantity: req.body.quantity}
+
+  // const list = req.body.name.map((nameOfIng, index) => {
+  //   return {name:nameOfIng, measure: req.body.measure[index], quantity: req.body.quantity[index]}
+  // }); 
+  // console.log(list)
+  User.findByIdAndUpdate(
+    user, 
+    { $push: {shoppingList: list}}, { new: true}
+    ).then((findedUser)=> {
+      console.log('this was added', findedUser)
+      res.redirect('/shoppingList')
+  })
+}); 
+
 
 
 module.exports = router;

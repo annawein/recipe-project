@@ -1,4 +1,40 @@
 <h2>Hello {{user.username}}, check out all your recipes:</h2>
+
+{{#each recipeList}}
+
+
+  <img src="{{this.image}} ">
+  <h3>{{this.title}} </h3>
+  <a href="/allRecipes/{{_id}}">See the details</a>
+   
+
+  <br>
+  <br>
+  <br>
+{{/each}}
+
+<br>
+<br>
+
+<a href="/addRecipe">Create new recipe</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <h2>Hello {{user.username}}, check out all your recipes:</h2>
 {{#each recipeList}}
 <h3>{{this.title}} </h3>
 <img src="{{this.image}} ">
@@ -9,4 +45,4 @@
 {{/each}}
 <br>
 <br>
-<a href="/addRecipe">Create new recipe</a>
+<a href="/addRecipe">Create new recipe</a> --}}
