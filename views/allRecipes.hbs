@@ -1,4 +1,4 @@
-<h2>Recipes</h2>
+
 
 {{!-- <div class="container">
   <div class="row">
@@ -17,8 +17,12 @@
   </div>
 </div> --}}
 
+<h2 class="recipes-heading">Recipes</h2>
 
 <div class="container">
+
+ 
+ 
   {{!-- <div class="row">
     <div class="col-sm"> --}}
 {{#each recipeList}}
@@ -27,10 +31,17 @@
 <div class="recipe-card">
 
   <img class="rounded" "img-fluid" src="{{this.image}}">
+  <br>
+  <br>
   <figcaption class="caption">{{this.title}}</figcaption>
   <br>
-  <h3 class="recipe-title">{{this.title}} </h3>
   <a href="/allRecipes/{{_id}}">See the details</a>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  
 
 </div>
  
@@ -47,7 +58,7 @@
 <br>
 <br>
 
-<a href="/addRecipe">Create new recipe</a>
+{{!-- <a href="/addRecipe">Create new recipe</a> --}}
 
 
 
