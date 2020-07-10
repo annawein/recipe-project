@@ -16,6 +16,54 @@ hr {
     padding: 0;
 }
 
-.container
+.login-signup {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 0px 100px;
+  padding-right: 114px;
+}
+
+.what-we-do {
+  display: flex; 
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rounded-circle {
+  margin-left: 108px
+}
+
+.icon-text {
+  margin-right: 50px;
+  text-align: left;
+}
+
+.signin-form {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+background-color: rgba(253,173,58, 0.9);
+border-radius: 10px;
+padding: 10px;
+}
+
+.login-box {
+  
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-bottom: 152px;
+
+
+
+}
 
 /*# sourceMappingURL=style.css.map */
