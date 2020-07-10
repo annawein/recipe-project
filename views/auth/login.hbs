@@ -1,17 +1,78 @@
 
-<img class="col-sm; w-25; img-fluid" src="/images/foodimg.jpg" alt="Yummy food">
+<section class="login">
 
-<br>
+  <div id="iconsandstuff">
 
-<hr/>
 
-<div class="login-signup">
+    <div class="container">
+    <img class="rounded-circle" style="width:20%" src="/images/search-icon.jpeg" rel="search icon"> 
+    <h3>Find a recipe you like</h3>
+    </div>
+    <br>
+
+    <div class="container">
+    <img class="rounded-circle" style="width:20%" src="/images/list-icon.jpeg" rel="search icon">
+    <h3>Add ingredients to your list</h3>
+    </div>
+    <br>
+
+    <div class="container">
+    <img class="rounded-circle" style="width:20%" src="/images/shopping-icon.jpeg" rel="search icon">
+    <h3>Go shopping!</h3>
+    </div>
+    <br>
+    </div>
+
+
+
+
+  </div>
+
+  <div class="loginforms">
+    <br>
+    <h3>Login</h3>
+    <br><br><br>
+    <form class="login-box" action="/auth/login" method="POST" id="form-container"> 
+    <label for="username">Username</label><br>
+    <input id="username" type="text" name="username" placeholder="JonSnow">
+
+    <br><br>
+
+    <label for="password">Password</label> <br>
+    <input id="password" type="password" name="password" placeholder="Your password">
+    <br>
+    {{#if message }}
+      <div class="error-message">{{ message }}</div>
+    {{/if}}
+
+  <br>
+    <button id ="login-btn">Login</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <p class="account-message">
+      Don't have an account yet? <br>
+      <a href="/auth/signup">Signup</a>
+    </p>
+    </form>
+  </div>
+
+</section>
+
+{{!-- <div class="login-signup">
 
 <div class="what-we-do"> 
 
 <div class="icon">
 <img class="rounded-circle" style="width:20%" src="/images/search-icon.jpeg" rel="search icon"> 
-<h3 class="icon-text">Find a recipe you like</h1>
+<h3 class="icon-text">Find a recipe you like</h3>
 </div>
 
 
@@ -21,7 +82,7 @@
 
 <div class="icon">
 <img class="rounded-circle" style="width:20%" src="/images/list-icon.jpeg" rel="search icon">
-<h3 class="icon-text">Add ingredients to your list</h1>
+<h3 class="icon-text">Add ingredients to your list</h3>
 </div>
 
 <br>
@@ -29,14 +90,14 @@
 
 <div class="icon">
 <img class="rounded-circle" style="width:20%" src="/images/shopping-icon.jpeg" rel="search icon">
-<h3 class="icon-text">Go shopping!</h1>
+<h3 class="icon-text">Go shopping!</h3>
 </div>
 
-</div>
+</div> --}}
 
 
 
-<div class="signin-form">
+{{!-- <div class="signin-form">
 <h2>Login</h2>
 
 <form class="login-box" action="/auth/login" method="POST" id="form-container">
@@ -64,5 +125,5 @@
 </div>
 
 
-</div>
+</div> --}}
 
