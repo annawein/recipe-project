@@ -1,5 +1,8 @@
 require('dotenv').config();
 
+
+
+
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express      = require('express');
@@ -12,10 +15,17 @@ const path         = require('path');
 const session    = require("express-session");
 const MongoStore = require('connect-mongo')(session);
 const flash      = require("connect-flash");
+
+const bcrypt = require("bcrypt");
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+
+const User = require("./models/User");
+const Recipe = require('./models/Recipe'); 
     
 
 mongoose
-  .connect('mongodb://localhost/recipe-project', {useNewUrlParser: true})
+  .connect(process.env.MONGODB_URI ||'mongodb://localhost/recipe-project', {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -28,11 +38,47 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
+passport.serializeUser((user, cb) => {
+  cb(null, user._id);
+});
+ 
+passport.deserializeUser((id, cb) => {
+  User.findById(id, (err, user) => {
+    if (err) { return cb(err); }
+    cb(null, user);
+  });
+});
+ 
+passport.use(new LocalStrategy((username, password, next) => {
+  User.findOne({ username }, (err, user) => {
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      return next(null, false, { message: "Incorrect username" });
+    }
+    if (!bcrypt.compareSync(password, user.password)) {
+      return next(null, false, { message: "Incorrect password" });
+    }
+ 
+    return next(null, user);
+  });
+}));
+
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 
 // Express View engine setup
 
@@ -65,12 +111,18 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 // Enable authentication using session + passport
-app.use(session({
-  secret: 'irongenerator',
-  resave: true,
-  saveUninitialized: true,
-  store: new MongoStore( { mongooseConnection: mongoose.connection })
-}))
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    cookie: { maxAge: 24 * 60 * 60 * 1000 },
+    saveUninitialized: false,
+    resave: false,
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 24 * 60 * 60 * 1000
+    })
+  })
+);
 app.use(flash());
 require('./passport')(app);
     
@@ -81,5 +133,9 @@ app.use('/', index);
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
       
+const recipeRoutes = require('./routes/recipes'); 
+app.use('/', recipeRoutes); 
+
+
 
 module.exports = app;

@@ -2,23 +2,26 @@ const express = require("express");
 const passport = require('passport');
 const router = express.Router();
 const User = require("../models/User");
+const ensureLogin = require("connect-ensure-login");
 
 // Bcrypt to encrypt passwords
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;
 
-
+//login stuff
 router.get("/login", (req, res, next) => {
+  
   res.render("auth/login", { "message": req.flash("error") });
 });
 
 router.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: "/allRecipes/",
   failureRedirect: "/auth/login",
   failureFlash: true,
   passReqToCallback: true
 }));
 
+//signup stuff
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
@@ -30,6 +33,11 @@ router.post("/signup", (req, res, next) => {
     res.render("auth/signup", { message: "Indicate username and password" });
     return;
   }
+
+  router.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
+    res.render("private", { user: req.user });
+  });
+
 
   User.findOne({ username }, "username", (err, user) => {
     if (user !== null) {
@@ -47,7 +55,11 @@ router.post("/signup", (req, res, next) => {
 
     newUser.save()
     .then(() => {
-      res.redirect("/");
+      console.log("working")
+      req.login(newUser, function(err) {
+        if (err) { return next(err); }
+        return res.redirect('/');
+      });
     })
     .catch(err => {
       res.render("auth/signup", { message: "Something went wrong" });
@@ -57,7 +69,11 @@ router.post("/signup", (req, res, next) => {
 
 router.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("/");
+  console.log('user is logged out')
+  res.render("auth/logout");
 });
+
+//change
+
 
 module.exports = router;
