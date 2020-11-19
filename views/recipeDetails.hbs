@@ -1,0 +1,26 @@
+<h2>Recipe Details</h2>
+
+<a href="/allRecipes">Go back to overview</a>
+
+<form action="/shoppingList" method="POST">
+
+{{#with recipe}}
+<h3 >{{title}}</h3>
+<p>Duration: {{duration}} minutes in total</p>
+  <ul>
+
+    {{#each ingredients}}
+    <li>
+        <input type="text" name="ingredient" value="{{this.quantity}} {{this.measure}} {{this.name}}"> 
+    </li>
+    {{/each}}
+  </ul>
+<p>Here's how to do it: {{description}}</p>
+{{!-- <p><img src="" alt="image"></p> --}}
+{{/with}}
+
+
+<button type="submit" class="btn btn-dark">Add the ingredients to shopping list</button>
+
+</form>
+
