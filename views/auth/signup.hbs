@@ -10,16 +10,17 @@
 
   <div class="signupforms">
     <br>
-    <h3>Sign up</h3>
+    
     <br><br><br>
     <form action="/auth/signup" method="POST" id="form-container">
-      <label for="username">Username</label><br>
-      <input id="username" type="text" name="username" placeholder="choose a username">
+    <h2 class="main-title">Kitchen Hack</h2>
+      <label class="username" for="username">Username</label><br>
+      <input class="username" id="username" type="text" name="username" placeholder="choose a username">
 
-     <br><br><br>
+     <br><br>
 
-      <label for="password">Password</label><br>
-     <input id="password" type="password" name="password" placeholder="choose a password">
+      <label class="password" for="password">Password</label><br>
+     <input class="password" id="password" type="password" name="password" placeholder="choose a password">
      <br>
       {{#if message }}
        <div class="error-message">{{ message }}</div>
@@ -27,7 +28,7 @@
 
         <br>
 
-    <button class="btn btn-light">Create account</button>
+    <button class="signup-btn">Create account</button>
     <br>
     <br>
     <br>
