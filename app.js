@@ -1,7 +1,10 @@
 require('dotenv').config();
 
-
-
+module.exports = {
+  NODE_ENV: process.env.NODE_ENV || 'development',
+    HOST: process.env.HOST || '127.0.0.1',
+    PORT: process.env.PORT || 3000
+  }
 
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -25,7 +28,10 @@ const Recipe = require('./models/Recipe');
     
 
 mongoose
-  .connect(process.env.MONGODB_URI ||'mongodb://localhost/recipe-project', {useNewUrlParser: true})
+  .connect('mongodb://localhost/recipe-project', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
