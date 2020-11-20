@@ -65,50 +65,65 @@ padding: 10px;
 
 /* //new verena:  */
 
-#iconsandstuff {
+/* #iconsandstuff {
   color: white; 
   display: flex; 
   flex-direction: column; 
   justify-content: center;
   align-content: center;
-  background: rgba(121, 158, 122, 0.7);
-  border-radius: 10px;
+  /* background: rgba(121, 158, 122, 0.7); */
+  /* border-radius: 10px;
   padding-right: 100px;
   margin-right: 10px;
-}
-#iconsandstuff .container {
+} */ */
+
+
+
+/* #iconsandstuff .container {
   display: flex; 
   flex-direction: row;
   margin: 50px; 
   align-content: center;
   
-}
+} */
 
 
 
-
+/* 
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0 100px 0 100px;
 }
+
+
   /* hereeeeeeeeee */
 #iconsandstuff h3 {
   margin-left: 20px;
   display: flex;
+  justify-content: center;
   margin-top: 22px;
+} */
+
+/* .login { */
+  /* background-image: url("/images/brooke-lark-08bOYnH_r_E-unsplash.jpg"); */
+  /* background-size: 100%; */
+  /* background-repeat: no-repeat;
+  display: flex;  */
+  /* flex-direction: row;  */
+  /* justify-content: center; */
+  /* height: 500px; */
+/* } */
+
+.container {
+  display: flex; 
+  flex-direction: row;
+  justify-content: center;
+  
 }
 
-.login {
-  background-image: url("/images/brooke-lark-08bOYnH_r_E-unsplash.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  display: flex; 
-  flex-direction: row; 
-  justify-content: center;
-  height: 500px;
-}
+
 .signup {
   background-image: url("/images/brooke-lark-08bOYnH_r_E-unsplash.jpg");
   background-size: 100%;
@@ -135,6 +150,8 @@ padding: 10px;
 
 #iconsandstuff img {
   display: flex; 
+  justify-content: center;
+  flex-wrap: wrap;
   height: 75px; 
   width: 75px !important;} 
   /* ////here */
