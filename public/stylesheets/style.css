@@ -269,4 +269,27 @@ padding: 10px;
   display: block;
 }
 
+.full-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipe-item-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 75%;
+  border-width: 1em;
+  background-color: pink;
+}
+
+.to-add-item {
+  align-items: flex-start;
+}
+
+.list {
+  align-items: flex-start;
+}
 /*# sourceMappingURL=style.css.map */
