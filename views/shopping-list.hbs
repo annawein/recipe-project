@@ -6,33 +6,32 @@
 
     <form action="/shoppingList/updateWithAdditionalItem" method="POST">
 
-      <input type="text" name="name" placeholder="Add item" required>
-      <button type="submit" class="btn btn-dark">+</button>
+      <button type="submit">+</button>
+      <input class="add-item-form" type="text" name="name" placeholder="Add item" required>
 
     </form>
 
   </div>
 
- 
   <div class="list">
 
     <form action="/shoppingList/update" method="POST">
 
       {{#each list}}
 
-      <div>
+        <p class="the-list-ingredient">
 
-        <p>
+            {{this.name}}
 
-          {{this.name}}
+            {{this.measure}}
 
-          <input name="name" value="{{this.name}}" type="hidden">
-
-          <a href="/ingredients/remove/{{this.name}}">X</a>
-
+            {{this.quantity}}
+            
+            <a class="delete-this" href="/ingredients/remove/{{this.name}}">X</a>
+            
+            <a class="delete-this" href="/ingredients/remove/{{this.name}}">Y</a>
+        
         </p>
-
-      </div>
 
       {{/each}}
 
