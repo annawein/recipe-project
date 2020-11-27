@@ -275,6 +275,34 @@ padding: 10px;
   display: block;
 }
 
+
+.recipe-details-page {
+ display: flex;
+ justify-content: center;
+ align-content: center;
+ align-items: center;
+ 
+}
+
+.recipe-details-page-elements {
+  width: 800px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.recipe-details-page img {
+  margin-top: 10px;
+  width: 800px;
+  height: 500px;
+  border-radius: 20px;
+  background-size: cover;
+}
+
+.each-item {
+  list-style-type: none;
+}
+
 .full-page {
   display: flex;
   align-items: center;
@@ -286,12 +314,13 @@ padding: 10px;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  width: 375px;
+  width: 575px;
   border-width: 1em;
   background-color: ghostwhite;
   flex-wrap: wrap;
   border: solid rgb(187, 187, 187);
   border-width: 0px 0px 1px 0px;
+  margin-top: 20px;
 }
 
 .to-add-item {
@@ -343,7 +372,7 @@ padding: 10px;
   height: 70px;
   display: flex;
   align-items: center;
-  width: 375px;
+  width: 575px;
   margin: 0px;
   color: darkgray;
   padding-left: 10px;
