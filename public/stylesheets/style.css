@@ -1,7 +1,8 @@
 /* <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> */
 body {
   /* padding: 50px; */
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  font: roboto;
   top: 0;
   left: 0;
   bottom: 0;
@@ -291,17 +292,87 @@ padding: 10px;
 }
 
 
+
+
 .recipe-details-page img {
   margin-top: 10px;
   width: 800px;
   height: 500px;
   border-radius: 20px;
-  background-size: cover;
+  object-fit: cover;
 }
 
 .each-item {
   list-style-type: none;
+  display: inline;
+  
+  
 }
+
+.each-item input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    background-color:white;
+    outline: hidden;
+    width: 300px;
+  }
+  
+  .no-outline:focus {
+    outline: none;
+  }
+
+  .rowrow {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .the-duration {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .the-duration p {
+    border: solid; 
+    border-width: 1px;
+    border-color: black;
+    width: 250px; 
+    height: 250px;
+    border-radius: 50%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: 300;
+    
+  }
+
+  .the-duration h3 {
+    diisplay: flex; 
+    text-align: center;
+  }
+
+  .add-to-the-list {
+    background-color: white;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;  
+  }
+
+  .add-to-the-list:focus {
+    outline: none;
+  } 
+  
+  .add-to-the-list:hover {
+    font-size: large;
+  }
+  
+  .add-to-the-list:active {
+    font-size: large;
+  }
 
 .full-page {
   display: flex;

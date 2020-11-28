@@ -10,15 +10,25 @@
 
     {{#with recipe}}
 
+    <h2 >{{title}}</h2>
+
     <p><img src="{{this.image}}" alt="image"></p> 
+
+    <br>
 
     <hr>
 
-    <h3 >{{title}}</h3>
+    <br>
+  
+  
+    <div class="rowrow">
 
-    <p>Duration: {{duration}} minutes in total</p>
+    <div>
+
+    <h3>Ingredients</h3>
 
     <ul class="each-item">
+
 
         {{#each ingredients}}
 
@@ -32,11 +42,47 @@
 
     </ul>
 
-    <button type="submit" class="btn btn-dark">Add to shopping list</button>
+    <br>
 
-    <p>Here's how to do it: {{description}}</p>
+    <button type="submit" class="add-to-the-list">Add to list</button>
+
+    </div>
+
+    <div class="the-duration">
+
+    <h3>Duration</h3>
+
+    <br>
+
+    <p> {{duration}}  min</p>
+
+    </div>
+  
+    </div>
+
+    
+
+    <br>
+   
+
+    <hr>
+
+    <br>
+    
+
+    
+
+    <h3>Here's how to do it:</h3>
+
+    <p> {{description}} </p>
     
     {{/with}}
+
+   
+    <br>
+
+    <hr>
+
 
     </div>
 
