@@ -2,17 +2,23 @@
 
 {{!-- <a href="/allRecipes">Go back to overview</a> --}}
 
-<div class="recipe-details-page">
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+{{!-- <div class="recipe-details-page"> --}}
 
 <form action="/shoppingList" method="POST">
 
-    <div class="recipe-details-page-elements">
+    {{!-- <div class="recipe-details-page-elements"> --}}
 
     {{#with recipe}}
 
     <h2 >{{title}}</h2>
 
-    <p><img src="{{this.image}}" alt="image"></p> 
+    <img class="title-img" src="{{this.image}}" alt="image">
+
+    {{!-- <p><img src="{{this.image}}" alt="image"></p>  --}}
 
    <hr> 
 
@@ -20,7 +26,7 @@
     
   
   
-    <div class="rowrow">
+    {{!-- <div class="rowrow"> --}}
 
     {{!-- <div class="the-duration">
 
@@ -36,7 +42,7 @@
 
     <hr> --}}
 
-    <div class="about-recipe">
+    {{!-- <div class="about-recipe"> --}}
 
     <ul class="each-item">
 
@@ -60,7 +66,7 @@
 
     <button type="submit" class="add-to-the-list">Add to list</button>
 
-    </div>
+    {{!-- </div> --}}
 
     
 
@@ -69,17 +75,14 @@
     <br>
   
   
-    </div>
+    {{!-- </div> --}}
 
     
 
     <br>
    
 
-    <hr>
-
-    <br>
-    
+   
 
     
 
@@ -95,9 +98,12 @@
     <hr>
 
 
-    </div>
+    {{!-- </div> --}}
 
 </form>
 
-</div>
+{{!-- </div> --}}
 
+ </div>
+  </div>
+</div>
