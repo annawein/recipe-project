@@ -479,6 +479,7 @@ padding: 10px;
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
+  display: block;
 }
 
 .the-list-ingredient {
@@ -488,7 +489,7 @@ padding: 10px;
   height: 70px;
   display: flex;
   align-items: center;
-  width: 575px;
+  /* width: 575px; */
   margin: 0px;
   color: darkgray;
   padding-left: 10px;
