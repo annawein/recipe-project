@@ -15,6 +15,20 @@ a {
   color: royalblue;
 }
 
+.logged-in-nav {
+  background-color: white;
+}
+
+/* .logged-in-nav a:hover {
+  text-decoration: underline;
+}
+
+.nav-item a:active {
+  text-decoration: underline;
+}
+ */
+
+
 /* hr {
     display: block;
     height: 1px;
@@ -86,7 +100,14 @@ padding: 10px;
   
 } */
 
-.container {
+/* .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 100px 0 100px;
+}  */
+
+.all-the-recipes {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -242,25 +263,26 @@ padding: 10px;
 .rounded {
   height: 300px;
   width: 200px;
-  background-size: cover;
+  object-fit: cover;
 }
 
 .rounded img {
   height: 100vh;
-  background-size: cover;
+  /* object-fit: cover; */
 }
 
 .recipe-title {
   font-size: 25px;
   max-width: 350px;
+  height: 300px;
 }
 
 .recipe-card {
   /* To correctly align image, regardless of content height: */
-  vertical-align: top;
-  display: inline-block;
+  /* vertical-align: top;
+  display: inline-block; */
   /* To horizontally center images and caption */
-  text-align: left;
+  /* text-align: left; */
   /* The width of the container also implies margin around the images. */
   width: 200px;
 }
@@ -273,7 +295,8 @@ padding: 10px;
 
 .caption {
   /* Make the caption a block so it occupies its own line. */
-  display: block;
+  /* display: block; */
+  height: 10px;
 }
 
 
@@ -283,6 +306,10 @@ padding: 10px;
  align-content: center;
  align-items: center;
  
+}
+
+.recipe-details-page h2 {
+  text-align: center;
 }
 
 .recipe-details-page-elements {
@@ -305,6 +332,10 @@ padding: 10px;
 .each-item {
   list-style-type: none;
   display: inline;
+  /* display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;   */
   
   
 }
@@ -317,24 +348,34 @@ padding: 10px;
     background-color:white;
     outline: hidden;
     width: 300px;
+    align-items: center;
   }
   
   .no-outline:focus {
     outline: none;
   }
 
-  .rowrow {
+  /* .about-recipe h3 {
     display: flex;
-    justify-content: space-between;
+    align-items: left;
+    justify-content: flex-start;
+  }  */
+
+  .about-recipe {
+    /* display: flex; 
+    flex-direction: column;
+    align-items: center; */
+    /* justify-content: center; */
   }
 
   .the-duration {
     display: flex; 
     flex-direction: column;
-    align-items: center;
+    /* align-items: center */
     
   }
 
+  
   .the-duration p {
     border: solid; 
     border-width: 1px;
@@ -350,16 +391,20 @@ padding: 10px;
     
   }
 
-  .the-duration h3 {
+  /* .the-duration h3 {
     diisplay: flex; 
     text-align: center;
-  }
+  } */
 
   .add-to-the-list {
     background-color: white;
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;  
+    /* display: flex; 
+    justify-content: center;
+    align-items: center;
+    display: inline; */
   }
 
   .add-to-the-list:focus {
@@ -369,7 +414,7 @@ padding: 10px;
   .add-to-the-list:hover {
     font-size: large;
   }
-  
+
   .add-to-the-list:active {
     font-size: large;
   }

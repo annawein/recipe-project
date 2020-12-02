@@ -14,21 +14,33 @@
 
     <p><img src="{{this.image}}" alt="image"></p> 
 
-    <br>
+   <hr> 
 
-    <hr>
-
-    <br>
+   
+    
   
   
     <div class="rowrow">
 
-    <div>
+    {{!-- <div class="the-duration">
 
-    <h3>Ingredients</h3>
+    <h3>Duration</h3>
+
+    <br>
+
+    <p> {{duration}}  min</p>
+
+    </div>
+
+    <br>
+
+    <hr> --}}
+
+    <div class="about-recipe">
 
     <ul class="each-item">
 
+    <h3>Ingredients</h3>
 
         {{#each ingredients}}
 
@@ -44,19 +56,18 @@
 
     <br>
 
+   
+
     <button type="submit" class="add-to-the-list">Add to list</button>
 
     </div>
 
-    <div class="the-duration">
+    
 
-    <h3>Duration</h3>
+  
 
     <br>
-
-    <p> {{duration}}  min</p>
-
-    </div>
+  
   
     </div>
 

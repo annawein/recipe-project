@@ -29,50 +29,16 @@
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 
   <link href = "https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab|Roboto:300,400,500,700" rel = "stylesheet" />
-
-
-
-
-
-
 </head>
 
 
 
 {{#if user}}
 
-{{!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #ffffff">
-    <h1 class="navbar-brand">kitchen hack</h1>
-    <a  href="/allRecipes">Recipes</a>
-    <a  href="/shoppingList">Shopping List</a>
-    <a  href="/auth/logout">Logout</a>
-  </nav> --}}
+{{!-- navbar-light bg-light --}}
 
-{{!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #ffffff">
-      <a class="navbar-brand" href="#">Kitchen Hack</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
-          <ul class="navbar-nav mr-auto"></ul>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-              </li>
-
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-              </li>
-
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-              </li>
-          </ul>
-      </div>
-  </nav> --}}
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Kitchen Hack</a>
+<nav class="navbar navbar-expand-lg logged-in-nav navbar-light ">
+  <a class="navbar-brand" href="/allRecipes">Kitchen Hack</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -80,14 +46,14 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="/allRecipes">Recipes <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/shoppingList">Shopping List</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/auth/logout">Logout</a>
+        <a class="nav-link" href="/auth/login">Logout</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -99,38 +65,16 @@
 
 <hr>
 
-
-
-{{!-- <a  href="/allRecipes">Recipes</a>
-    <a  href="/shoppingList">Shopping List</a>
-    <a  href="/auth/logout">Logout</a>
-  </nav> --}}
-
 {{else}}
 
 
-<hr>
-{{!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a href="/auth/login" class="navbar-brand">Login</a>
-    <a href="/auth/signup" class="navbar-brand">Signup</a>
-   
-  </nav> --}}
 {{/if}}
-
-
-
-
-{{!-- <div class="container">
-  <div class="row"> --}}
-
-{{!-- </div>
-</div> --}}
-
 
 
 {{{body}}}
 
 <script src="/javascripts/script.js"></script>
+
 </body>
 
 </html>
