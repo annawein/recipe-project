@@ -214,7 +214,7 @@ const recipes=[
       {name: "Pepper", quantity: 1, measure: "tsp"},
     ], 
     duration: 60, 
-    image: "/images/recipe7.jpg", 
+    image: "/images/recipenew7.jpg", 
     description: "Preheat oven to 200°C/400°F. Peel sweet potato and cut into sticks. Chop rosemary. Transfer potatoes to a parchment-lined baking tray. Season with salt, top with rosemary, and drizzle with olive oil. Bake for approx. 30 min. Meanwhile, finely chop chives and slice half of the lemon. Cut broccoli into bitesize pieces. Remove the avocado stone and shell. Cut into strips. Halve cherry tomatoes. Chop cucumber and carrots into sticks. Rinse quinoa in a sieve under cold running water and drain. Add water and salt to taste to small saucepan and bring to a boil over medium heat. Add quinoa and cook for approx. 15 min. Fill another small pan with water and salt to taste and bring to a boil. Add broccoli and cook for approx. 5 - 10 min. until tender but still firm to the bite. Drain water and set aside. For the topping, combine cream cheese, chives, salt, and pepper in small bowl. Add quinoa to a serving bowl and top with prepared vegetables. Drizzle with quark mixture and lemon juice. Enjoy!", 
     dishType: "Main",
   }, 

@@ -350,6 +350,7 @@ padding: 10px;
 .each-item {
   list-style-type: none;
   display: inline;
+  width: 100%;
   /* display: flex; 
   flex-direction: column;
   align-items: center;
@@ -365,6 +366,8 @@ padding: 10px;
   outline: hidden;
   /* width: 300px; */
   align-items: center;
+  display: block;
+  width: 100%;
 }
 
 .no-outline:focus {
@@ -425,13 +428,13 @@ padding: 10px;
 }
 
 .add-to-the-list:hover {
-  background-color: black; 
-  color: white; 
+  background-color: ghostwhite; 
+  color: black; 
 }
 
 .add-to-the-list:active {
-  background-color: black; 
-  color: white; 
+  background-color: ghostwhite; 
+  color: black; 
 }
 
 
@@ -496,7 +499,7 @@ padding: 10px;
   align-items: flex-start;
   flex-wrap: wrap;
   display: block;
-  margin-bottom: 29px;
+  margin-bottom: 20px;
 }
 
 .the-list-ingredient {
