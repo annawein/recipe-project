@@ -380,12 +380,7 @@ padding: 10px;
     justify-content: flex-start;
   }  */
 
-.about-recipe {
-  /* display: flex; 
-    flex-direction: column;
-    align-items: center; */
-  /* justify-content: center; */
-}
+
 
 .the-duration {
   display: flex;
@@ -416,11 +411,11 @@ padding: 10px;
   background-color: white;
   border-color: black;
   width: 300px;
-  height: 50px;
+  height: 40px;
   
     justify-content: center;
     align-items: center;
-    display: inline; */
+    display: inline; 
 }
 
 .add-to-the-list:focus {
@@ -435,7 +430,18 @@ padding: 10px;
 .add-to-the-list:active {
   background-color: ghostwhite; 
   color: black; 
+  font-size: large;
 }
+
+
+
+
+.the-add-item-button:focus {
+  outline: none;
+  outline: 0;
+}
+
+
 
 
 .full-page {
@@ -548,13 +554,6 @@ padding: 10px;
   width: 50px; 
 } */
 
-.delete-this:active {
-  /* border: solid green;   */
-
-  background-color: rgb(244, 244, 248);
-  padding: 10px;
-  border-radius: 50%;
-}
 
 .title-img {
   width: 800px;
